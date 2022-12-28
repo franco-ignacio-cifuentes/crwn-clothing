@@ -23,7 +23,6 @@ const firebaseConfig = {
   appId: "1:509728921933:web:724638fc30a438aa853f04"
 };
 
-
 const firebaseApp = initializeApp(firebaseConfig);
 
 const provider = new GoogleAuthProvider();
@@ -41,7 +40,7 @@ export const db = getFirestore();
 export const createUserDocumentFromAuth = async (userAuth) => {
 
   if (!userAuth) return;
-  
+
   const userDocRef = doc(db, 'users', userAuth.uid);
 
   const userSnapshot = await getDoc(userDocRef);
@@ -65,7 +64,7 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
-  if (!email || password) return;
-
-  return await createUserWithEmailAndPassword(auth, email, password)
+  if (!email || !password) return;
+  
+  return await createUserWithEmailAndPassword(auth, email, password);
 }

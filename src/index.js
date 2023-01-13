@@ -6,14 +6,17 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserPovider } from './contexts/user.context';
+import { ProductsProvider } from './contexts/products.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <UserPovider>
-        <App />
-      </UserPovider>
+      <ProductsProvider>
+        <UserPovider>
+          <App />
+        </UserPovider>
+      </ProductsProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

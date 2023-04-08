@@ -4,7 +4,7 @@ import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
 import {
-  signInAuthWithEmailAndPassword,
+  signInAuthUserWithEmailAndPassword,
   signInWithGooglePopup,
 } from '../../utils/firebase/firebase.utils';
 
@@ -31,20 +31,10 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      await signInAuthWithEmailAndPassword(email, password);
-
+      await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
-      switch (error.code) {
-        case 'auth/wrong-password':
-          alert('incorrect password for email');
-          break;
-        case 'auth/user-not-found':
-          alert('no user associated with this email');
-          break;
-        default:
-          console.log(error);
-      }
+      console.log('user sign in failed', error);
     }
   };
 
@@ -76,11 +66,12 @@ const SignInForm = () => {
           name='password'
           value={password}
         />
-        <div className="buttons-container">
+        <div className='buttons-container'>
           <Button type='submit'>Sign In</Button>
-          <Button type='button' buttonType='google' onClick={signInWithGoogle}>Google Sign In</Button>
+          <Button buttonType='google' type='button' onClick={signInWithGoogle}>
+            Sign In With Google
+          </Button>
         </div>
-
       </form>
     </div>
   );

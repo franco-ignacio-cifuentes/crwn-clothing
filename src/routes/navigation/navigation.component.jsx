@@ -20,7 +20,7 @@ import {
 
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
-  const { isCartOpen } = useSelector(selectIsCartOpen);
+  const isCartOpen = useSelector(selectIsCartOpen);
 
   return (
     <Fragment>

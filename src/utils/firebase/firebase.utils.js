@@ -21,12 +21,12 @@ import {
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
-  authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
-  projectId: 'crwn-clothing-db-98d4d',
-  storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
-  messagingSenderId: '626766232035',
-  appId: '1:626766232035:web:506621582dab103a4d08d6',
+  apiKey: "AIzaSyBNOEryfJRXocUQO3bYXBUn7aM431V4wm0",
+  authDomain: "crwn-db-528bf.firebaseapp.com",
+  projectId: "crwn-db-528bf",
+  storageBucket: "crwn-db-528bf.appspot.com",
+  messagingSenderId: "509728921933",
+  appId: "1:509728921933:web:724638fc30a438aa853f04"
 };
 
 // eslint-disable-next-line

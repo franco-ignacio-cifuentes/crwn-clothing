@@ -24,6 +24,10 @@ export const fetchCategoriesStart = withMatcher(() =>
   createAction(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START)
 );
 
+// Type is defined because of withMatcher
+//fetchCategoriesStart.type;
+//fetchCategoriesStart.match
+
 export const fetchCategoriesSuccess = withMatcher(
   (categoriesArray: Category[]) =>
     createAction(
